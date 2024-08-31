@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <h1>Photo Gallery</h1>
+    <a href="/upload">Upload New Photo</a>
+    <div class="container">
+        <% photos.forEach(photo => { %>
+            <div class="detail">
+                <label>Title</label>
+                <span><%= photo.title %></span>
+            </div>
+            <div class="detail">
+                <label>Description:</label>
+                <span><%= photo.description %></span>
+            </div>
+            <div class="detail">
+                <label>Photo: </label>
+                <img src="/images/<%= photo.filename %>" alt="Uploaded Image" height="300px" width="300px">
+            </div>
+        <% }) %>
+    </div>
+</body>
+</html>
